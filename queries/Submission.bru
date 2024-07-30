@@ -1,0 +1,17 @@
+meta {
+  name: Submission
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://inkbunny.net/api_submissions.php
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  sid: {{sid}}
+  submission_ids: 0
+  show_pools: yes
+}

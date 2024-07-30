@@ -1,0 +1,17 @@
+meta {
+  name: Test
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/posts.json?limit=100&page=1&tags=bunny
+  body: none
+  auth: none
+}
+
+params:query {
+  limit: 100
+  page: 1
+  tags: bunny
+}

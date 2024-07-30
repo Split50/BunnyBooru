@@ -1,0 +1,18 @@
+meta {
+  name: Search
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://inkbunny.net/api_search.php
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  sid: {{sid}}
+  text: bunny
+  page: 1
+  ~submission_ids_only: yes
+}

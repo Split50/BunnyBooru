@@ -1,0 +1,5 @@
+proxy:
+  # Socks only, without password, sry
+  enabled: false
+  host: proxyhost.com
+  port: 1234

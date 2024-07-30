@@ -1,0 +1,80 @@
+package ru.split50.bunnybooru.booru
+
+import com.fasterxml.jackson.annotation.JsonProperty
+import java.time.LocalDateTime
+
+data class BooruRow(
+    @JsonProperty("id") val id: String? = null,
+    @JsonProperty("created_at") val createdAt: String? = null,
+    @JsonProperty("uploader_id") val uploaderId: String? = null,
+    @JsonProperty("score") val score: String? = null,
+    @JsonProperty("source") val source: String? = null,
+    @JsonProperty("md5") val md5: String? = null,
+    @JsonProperty("last_comment_bumped_at") val lastCommentBumpedAt: Any? = null,
+    @JsonProperty("rating") val rating: String? = null,
+    @JsonProperty("image_width") val imageWidth: String? = null,
+    @JsonProperty("image_height") val imageHeight: String? = null,
+    @JsonProperty("tag_string") val tagString: String? = null,
+    @JsonProperty("fav_count") val favCount: String? = null,
+    @JsonProperty("file_ext") val fileExt: String? = null,
+    @JsonProperty("last_noted_at") val lastNotedAt: Any? = null,
+    @JsonProperty("parent_id") val parentId: Any? = null,
+    @JsonProperty("has_children") val hasChildren: Boolean? = null,
+    @JsonProperty("approver_id") val approverId: Any? = null,
+    @JsonProperty("tag_count_general") val tagCountGeneral: String? = null,
+    @JsonProperty("tag_count_artist") val tagCountArtist: String? = null,
+    @JsonProperty("tag_count_character") val tagCountCharacter: String? = null,
+    @JsonProperty("tag_count_copyright") val tagCountCopyright: String? = null,
+    @JsonProperty("file_size") val fileSize: String? = null,
+    @JsonProperty("up_score") val upScore: String? = null,
+    @JsonProperty("down_score") val downScore: String? = null,
+    @JsonProperty("is_pending") val isPending: Boolean? = null,
+    @JsonProperty("is_flagged") val isFlagged: Boolean? = null,
+    @JsonProperty("is_deleted") val isDeleted: Boolean? = null,
+    @JsonProperty("tag_count") val tagCount: String? = null,
+    @JsonProperty("updated_at") val updatedAt: String? = null,
+    @JsonProperty("is_banned") val isBanned: Boolean? = null,
+    @JsonProperty("pixiv_id") val pixivId: String? = null,
+    @JsonProperty("last_commented_at") val lastCommentedAt: Any? = null,
+    @JsonProperty("has_active_children") val hasActiveChildren: Boolean? = null,
+    @JsonProperty("bit_flags") val bitFlags: String? = null,
+    @JsonProperty("tag_count_meta") val tagCountMeta: String? = null,
+    @JsonProperty("has_large") val hasLarge: Boolean? = null,
+    @JsonProperty("has_visible_children") val hasVisibleChildren: Boolean? = null,
+    @JsonProperty("media_asset") val mediaAsset: MediaAsset? = null,
+    @JsonProperty("tag_string_general") val tagStringGeneral: String? = null,
+    @JsonProperty("tag_string_character") val tagStringCharacter: String? = null,
+    @JsonProperty("tag_string_copyright") val tagStringCopyright: String? = null,
+    @JsonProperty("tag_string_artist") val tagStringArtist: String? = null,
+    @JsonProperty("tag_string_meta") val tagStringMeta: String? = null,
+    @JsonProperty("file_url") val fileUrl: String? = null,
+    @JsonProperty("large_file_url") val largeFileUrl: String? = null,
+    @JsonProperty("preview_file_url") val previewFileUrl: String? = null,
+) {
+    data class MediaAsset(
+        @JsonProperty("id") val id: String? = null,
+        @JsonProperty("created_at") val createdAt: LocalDateTime? = null,
+        @JsonProperty("updated_at") val updatedAt: LocalDateTime? = null,
+        @JsonProperty("md5") val md5: String? = null,
+        @JsonProperty("file_ext") val fileExt: String? = null,
+        @JsonProperty("file_size") val fileSize: String? = null,
+        @JsonProperty("image_width") val imageWidth: String? = null,
+        @JsonProperty("image_height") val imageHeight: String? = null,
+        @JsonProperty("duration") val duration: Any? = null,
+        @JsonProperty("status") val status: String? = null,
+        @JsonProperty("file_key") val fileKey: String? = null,
+        @JsonProperty("is_public") val isPublic: Boolean? = null,
+        @JsonProperty("pixel_hash") val pixelHash: String? = null,
+        @JsonProperty("variants") val variants: List<Variant>? = null,
+    )
+
+    data class Variant(
+        @JsonProperty("type") val type: String? = null,
+        @JsonProperty("url") val url: String? = null,
+        @JsonProperty("width") val width: String? = null,
+        @JsonProperty("height") val height: String? = null,
+        @JsonProperty("file_ext") val fileExt: String? = null,
+    )
+
+
+}

@@ -1,0 +1,16 @@
+meta {
+  name: Login
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://inkbunny.net/api_login.php?username=split50&password=1234Bomb50
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  username: guest
+  password: 
+}
