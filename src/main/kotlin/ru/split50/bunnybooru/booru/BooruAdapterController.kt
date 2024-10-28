@@ -38,7 +38,7 @@ class BooruAdapterController(
         }
 
         return result.flatMap {
-            mapToBooru(it)
+            mapToBooru(it).reversed()
         }
     }
 

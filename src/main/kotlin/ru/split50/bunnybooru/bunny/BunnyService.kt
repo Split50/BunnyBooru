@@ -35,8 +35,28 @@ class BunnyService(
             )
         }
         .build()
+    private val postCache = hashMapOf<PostSearch, List<BunnySubmissionResponse>>()
+
+    private data class PostSearch(
+        val sid: String,
+        val query: String,
+        val page: Int,
+        val limit: Int,
+    )
 
     fun findPosts(sid: String, query: String, page: Int, limit: Int): List<BunnySubmissionResponse> {
+        val search = PostSearch(sid, query, page, limit)
+
+        try {
+            return postCache.computeIfAbsent(search, ::_findPosts)
+        } catch (ex: Exception) {
+            postCache.remove(search)
+            throw ex
+        }
+    }
+
+    private fun _findPosts(search: PostSearch): List<BunnySubmissionResponse> {
+        val (sid, query, page, limit) = search
         val formBuilder = FormBody.Builder()
             .add("sid", sid)
             .add("page", page.toString())
